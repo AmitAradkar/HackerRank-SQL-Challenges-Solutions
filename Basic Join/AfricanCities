@@ -1,0 +1,46 @@
+/*
+----------------------------------------------------
+Problem: Query the names of all cities
+         where the continent is Africa
+Platform: HackerRank (SQL - Basic Join)
+Tables  : CITY, COUNTRY
+----------------------------------------------------
+
+Table Structures:
+
+CITY
+- ID
+- NAME
+- COUNTRYCODE
+- DISTRICT
+- POPULATION
+
+COUNTRY
+- CODE
+- NAME
+- CONTINENT
+- REGION
+- SURFACEAREA
+- INDEPYEAR
+- POPULATION
+- LIFEEXPECTANCY
+- GNP
+- GNPOLD
+- LOCALNAME
+- GOVERNMENTFORM
+- HEADOFSTATE
+- CAPITAL
+- CODE2
+
+----------------------------------------------------
+Expected Output:
+- List of city names that belong to countries
+  located in the continent 'Africa'
+----------------------------------------------------
+*/
+
+SELECT CITY.NAME
+FROM CITY
+JOIN COUNTRY
+  ON CITY.COUNTRYCODE = COUNTRY.CODE
+WHERE COUNTRY.CONTINENT = 'Africa';
