@@ -1,0 +1,40 @@
+/*
+----------------------------------------------------
+Problem: Query the sum of the populations of all
+         cities where the continent is 'Asia'
+Platform: HackerRank (SQL - Basic Join)
+Tables  : CITY, COUNTRY
+----------------------------------------------------
+
+Table Structures:
+
+CITY
+- ID
+- NAME
+- COUNTRYCODE
+- DISTRICT
+- POPULATION
+
+COUNTRY
+- CODE
+- NAME
+- CONTINENT
+- REGION
+- POPULATION
+----------------------------------------------------
+
+Join Condition:
+CITY.COUNTRYCODE = COUNTRY.CODE
+
+----------------------------------------------------
+Expected Output:
+- A single integer value representing the total
+  population of all cities located in Asia
+----------------------------------------------------
+*/
+
+SELECT SUM(ci.POPULATION) AS total_population
+FROM CITY ci
+JOIN COUNTRY co
+  ON ci.COUNTRYCODE = co.CODE
+WHERE co.CONTINENT = 'Asia';
